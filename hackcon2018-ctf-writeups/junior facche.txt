@@ -1,0 +1,40 @@
+Caesar Salad 10pts -
+"Can you toss Caesar's Salad?
+	q4ex{t1g_thq_p4rf4e}p0qr
+Caesar indicated that the string given "q4ex{t1g_thq_p4rf4e}p0qr" is encrypted through a caesar cipher
+making a python script to brute force and shift every possible letter in the alphabet
+then finally we got our flag, use grep to extract and put it into a file
+
+Hoaxes and Hexes 20pts -
+"My friend sent me a meme and told me to 'look at it differently'. Tf?"
+look at an image differtently, so we're doing stengenography potentially
+wget the link
+low hanging fruit - using strings and found the flag
+
+Salad Upgrades 20pts -
+"Sure, I could toss them all using just one shift. But am I gonna?"
+	CIPHERTEXT: e4uo{zo1b_1e_f0j4l10i}z0ce
+Another cipher, we're given the string "e4uo{zo1b_1e_f0j4l10i}z0ce"
+im going to move the 'ape.py' script that i wrote over to this file and use it again
+but we're not going to find the correct string again, i guess it was an "upgrade"
+looking back at the clue "Sure, I could toss them all using just one shift. But am I gonna?"
+it indicates that only sections of the flag has been shifted, "polyalphabetic"
+that means its a vignere cipher, im quite new to the concept myself, this is my first ctf
+it needs a key, every flag in the challenge starts with 'd4rk' and 'c0de'
+well take part of the main sting "e4uo" and use "d4rk" as a string, and we get "BADE"
+-d4rk-
+d - > e = offset 1, suggests "B" (since A is 0)
+4 - > nothing, just "A"
+r -> u = offset 3, suggests "D" (since A is 0)
+k -> o = offset 4, suggests "E" (since A is 0)
+since everything is offset like that, you can easily find that the key is "BDEGHJMOQSVXZ"
+using an online vingere cipher, the flag that i got is "d4rk{th1s_1s_r0t4t10n}c0de"
+
+Find Me, ASAP 20pts -
+"What does this look like?!"
+we wget this text file, take a look at it, its a text file that is just 1 line of seemingly random numbers
+but these random numbers are decimal, im lazy, but i know that the start of the flag is "d4rk"
+the decimal value of "d4rk" is "100 52 114 107", if we just search for that in the file and grab a section
+translate it back into ascii text, we get the flag "d4rk{4sc11_n_gr3p}c0de"
+
+thus is the end of the junior/facche section

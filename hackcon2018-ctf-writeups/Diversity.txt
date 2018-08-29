@@ -1,0 +1,5 @@
+Diversity 30pts -
+We a string of random characers, these characters are either, binary, decimal, hex or octal literal
+its all randomly encrypted, so theres not pattern to it
+in my python script what we're gonna do is an if statement checking if its either any of those file types
+thankfully it gives us a guide with the character that it starts with e.g x is hex and d is decimal
